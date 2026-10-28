@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% block title %}Money clarity starts here{% endblock %}{% block content %}
+<section class="hero">
+<div class="hero-copy"><div class="eyebrow"><span class="dot"></span> YOUR MONEY, MORE INTENTIONAL</div><h1>Make your money<br><em>make sense.</em></h1><p class="hero-sub">A clearer view of your spending, a plan for your goals, and practical financial knowledge — all in one private workspace.</p>
+<div class="hero-actions"><a class="btn" href="{{ url_for('register') }}">Create your free workspace <span>↗</span></a><a class="text-link" href="{{ url_for('education') }}">Explore learning resources →</a></div>
+<div class="trust-row"><span>✓ Your records stay yours</span><span>✓ No bank connection required</span><span>✓ No demo data disguised as real</span></div></div>
+<div class="hero-visual"><div class="visual-top"><span class="mini-label">YOUR FINANCIAL PICTURE</span><span class="live-pill"><i></i> PERSONAL WORKSPACE</span></div><div class="visual-total"><span>Monthly overview</span><h2>Start with your numbers.</h2><p>Your dashboard calculates totals from transactions you enter. No invented balances.</p></div><div class="visual-cards"><div><span>INCOME</span><b>From your records</b><i class="up">↗</i></div><div><span>SPENDING</span><b>Track by category</b><i>↘</i></div></div><div class="visual-bottom"><span class="ring">◎</span><div><b>Small steps, lasting habits</b><small>Budget · Save · Learn · Review</small></div></div></div>
+</section>
+<section class="section-intro"><div><div class="eyebrow">A PRACTICAL MONEY TOOLKIT</div><h2>From financial stress<br>to a plan you can see.</h2></div><p>Useful tools for students and everyday money decisions. Add your own records, set realistic goals and learn the basics at your pace.</p></section>
+<section class="feature-grid">
+<a class="feature-card" href="{{ url_for('register') }}"><span class="feature-icon green">↗</span><h3>Know your cash flow</h3><p>See recorded income and expenses by month. Understand where your money is going.</p><span class="card-arrow">Explore tracking →</span></a>
+<a class="feature-card" href="{{ url_for('register') }}"><span class="feature-icon gold">◷</span><h3>Budget with intent</h3><p>Set category limits and compare them with the expenses you actually record.</p><span class="card-arrow">Build a budget →</span></a>
+<a class="feature-card" href="{{ url_for('register') }}"><span class="feature-icon blue">◎</span><h3>Plan for future you</h3><p>Create savings goals, track contributions and understand compound growth.</p><span class="card-arrow">Set a goal →</span></a>
+</section>
+<section class="bottom-cta"><div><div class="eyebrow">YOUR NEXT STEP</div><h2>Progress starts with one honest number.</h2><p>Open your workspace and start with what you know today.</p></div><a class="btn btn-light" href="{{ url_for('register') }}">Get started <span>↗</span></a></section>
+{% endblock %}

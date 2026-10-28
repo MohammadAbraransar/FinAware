@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block title %}{{ 'Create account' if mode=='register' else 'Sign in' }}{% endblock %}{% block content %}
+<section class="auth-wrap"><div class="auth-side"><div class="eyebrow">A BETTER RELATIONSHIP WITH MONEY</div><h1>{{ 'Start with a clearer picture.' if mode=='register' else 'Welcome back.' }}</h1><p>{{ 'Create a private workspace for your own financial records, goals and learning.' if mode=='register' else 'Sign in to pick up where you left off.' }}</p><div class="auth-note"><span>✳</span><div><b>Designed for clarity</b><small>Your dashboard uses the records you enter — not pre-filled sample numbers.</small></div></div></div>
+<div class="auth-card"><h2>{{ 'Create your account' if mode=='register' else 'Sign in' }}</h2><p class="muted">{{ 'It takes less than a minute to get started.' if mode=='register' else 'Enter your account details below.' }}</p>
+<form method="post" class="form-stack"><input type="hidden" name="_csrf_token" value="{{ csrf_token }}">
+{% if mode=='register' %}<label>Full name<input name="name" required minlength="2" maxlength="80" autocomplete="name" placeholder="Your name"></label>{% endif %}
+<label>Email address<input type="email" name="email" required maxlength="254" autocomplete="email" placeholder="you@example.com"></label>
+<label>Password<input type="password" name="password" required {% if mode=='register' %}minlength="10"{% endif %} autocomplete="{{ 'new-password' if mode=='register' else 'current-password' }}" placeholder="{{ 'At least 10 characters' if mode=='register' else 'Your password' }}"></label>
+{% if mode=='register' %}<p class="field-note">Use at least 10 characters. Choose a password you do not use elsewhere.</p>{% endif %}
+<button class="btn btn-full" type="submit">{{ 'Create workspace' if mode=='register' else 'Sign in securely' }} <span>→</span></button></form>
+<p class="auth-switch">{% if mode=='register' %}Already registered? <a href="{{ url_for('login') }}">Sign in</a>{% else %}New to FinAware? <a href="{{ url_for('register') }}">Create an account</a>{% endif %}</p></div></section>
+{% endblock %}
