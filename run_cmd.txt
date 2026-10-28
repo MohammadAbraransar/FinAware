@@ -1,0 +1,6 @@
+py -m venv .venv
+.venv\Scripts\activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+set SECRET_KEY=replace-with-a-long-random-secret
+python app.py
